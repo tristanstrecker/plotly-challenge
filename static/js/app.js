@@ -1,3 +1,15 @@
+// Populate initial demographics and plots
+d3.json("../../samples.json").then(function(sample_data){
+    console.log(sample_data);
+// Populate dropdown
+    Object.values(sample_data.names).forEach(function(name) {
+        d3.selectAll("#selDataset").append("option").text(name).property(name);
+    });
+    Data(sample_data.names[0]);
+    Demographics(sample_data.names[0]);
+});
+
+
 // Create function to get the data
 function Data(id) {
     d3.json("../../samples.json").then(function(sample_data){
@@ -80,23 +92,6 @@ function Demographics(id) {
         });
     });
 }
-
-function init() {
-    d3.json("../../samples.json").then(function(sample_data){
-        console.log(sample_data);
-    // Populate dropdown
-        Object.values(sample_data.names).forEach(function(name) {
-            d3.selectAll("#selDataset").append("option").text(name).property(name);
-        });
-        Data(sample_data.names[0]);
-        Demographics(sample_data.names[0]);
-    });
-    Plotly.restyle("plot", "x", [x]);
-    Plotly.restyle("plot", "y", [y]);
-  
-}
-
-init();
 
 function optionChanged(id) {
     Data(id);
