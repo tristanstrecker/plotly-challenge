@@ -94,7 +94,7 @@ function Data(id) {
               axis: { range: [null, 9] },
               steps: [
                 // { range: [0, 10], color: "gray" },
-                { range: [0, 1], color: '#bbdebb', text: ["0-1"] },
+                { range: [0, 1], color: '#bbdebb', title: "0-1" },
                 { range: [1, 2], color: '#a7d0a7' },
                 { range: [2, 3], color: '#89bd89' },
                 { range: [3, 4], color: '#7cb17c' },
@@ -114,10 +114,12 @@ function Data(id) {
         ];
     //
     // https://code.tutsplus.com/tutorials/create-interactive-charts-using-plotlyjs-pie-and-gauge-charts--cms-29216
+    //
+    // https://www.zingchart.com/docs/chart-types/gauge
     
     let layout = { 
         width: 500, 
-        height: 500, 
+        height: 300, 
         margin: { t: 0, b: 0 },
         showticklabels: true,
     };

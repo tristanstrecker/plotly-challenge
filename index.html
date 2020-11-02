@@ -12,7 +12,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
        <!--- style="color: white; background-color: rgb(28 130 64 / 56%); text-shadow: -1px 2px 4px black;" -->
@@ -21,8 +21,15 @@
       </div>
   </div>
     </div>
-    <div class="row">
-      <div class="col-md-2" style="margin-left: 5%">
+<!-- 
+    <div class="row mx-md-n5">
+      <div class="col px-md-5"><div class="p-3 border bg-light">Custom column padding</div></div>
+      <div class="col px-md-5"><div class="p-3 border bg-light">Custom column padding</div></div>
+    </div>
+ -->
+
+    <div class="row mx-md-n5">
+      <div class="col-md-2" style="margin-left: 5%;">
         <div class="well">
           <h5>Test Subject ID No.:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
@@ -34,10 +41,10 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div id="bar"></div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <h2>Belly Button Washing Frequency</h2>
         <div id="gauge"></div>
       </div>
