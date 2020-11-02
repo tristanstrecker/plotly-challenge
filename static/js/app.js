@@ -1,5 +1,5 @@
 // Populate initial demographics
-d3.json("../../samples.json").then(function(sample_data){
+d3.json("samples.json").then(function(sample_data){
     console.log(sample_data);
 // Populate dropdown
     Object.values(sample_data.names).forEach(function(name) {
@@ -11,7 +11,7 @@ d3.json("../../samples.json").then(function(sample_data){
 
 // Create function to get the data
 function Data(id) {
-    d3.json("../../samples.json").then(function(sample_data){
+    d3.json("samples.json").then(function(sample_data){
         console.log(sample_data);
 
         // Help with filtering: v33na @GitHub - https://github.com/v33na/Belly-Button-Biodiversity/tree/master/static/js
@@ -131,7 +131,7 @@ function Data(id) {
 
 function Demographics(id) {
 
-    d3.json("../../samples.json").then(function(sample_data) {
+    d3.json("samples.json").then(function(sample_data) {
         let filteredDemoInfo = sample_data.metadata.filter(details => details.id.toString() === id)[0];
 
         let demographicInfo = d3.select("#sample-metadata");
