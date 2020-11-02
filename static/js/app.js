@@ -88,7 +88,7 @@ function Data(id) {
             value: washingFreq,
             title: { text: "Scrubs Per Week" },
             type: "indicator",
-            mode: "gauge+delta",
+            mode: "gauge+number",
             // delta: { reference: 380 },
             gauge: {
               axis: { range: [null, 9] },
