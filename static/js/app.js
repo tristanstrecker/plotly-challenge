@@ -90,10 +90,18 @@ function Data(id) {
             mode: "gauge+number+delta",
             // delta: { reference: 380 },
             gauge: {
-              axis: { range: [null, 10] },
+              axis: { range: [null, 9] },
               steps: [
-                { range: [0, 10], color: "white" },
-                { range: [0, 10], color: "white" }
+                // { range: [0, 10], color: "gray" },
+                { range: [0, 1], color: "white" },
+                { range: [1, 2], color: "blue" },
+                { range: [2, 3], color: "blue" },
+                { range: [3, 4], color: "blue" },
+                { range: [4, 5], color: "blue" },
+                { range: [5, 6], color: "blue" },
+                { range: [6, 7], color: "blue" },
+                { range: [7, 8], color: "blue" },
+                { range: [8, 9], color: "blue" }
               ],
             //   threshold: {
             //     line: { color: "red", width: 4 },
