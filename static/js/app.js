@@ -1,4 +1,4 @@
-// Populate initial demographics and plots
+// Populate initial demographics and
 d3.json("../../samples.json").then(function(sample_data){
     console.log(sample_data);
 // Populate dropdown
@@ -14,6 +14,7 @@ d3.json("../../samples.json").then(function(sample_data){
 function Data(id) {
     d3.json("../../samples.json").then(function(sample_data){
         console.log(sample_data);
+
         // Help with filtering: v33na @GitHub
         let filteredSampleInfo = sample_data.samples.filter(details => details.id.toString() === id)[0];
 
