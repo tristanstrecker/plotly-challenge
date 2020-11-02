@@ -1,4 +1,4 @@
-// Populate initial demographics and
+// Populate initial demographics
 d3.json("../../samples.json").then(function(sample_data){
     console.log(sample_data);
 // Populate dropdown
@@ -9,14 +9,14 @@ d3.json("../../samples.json").then(function(sample_data){
     Demographics(sample_data.names[0]);
 });
 
-
 // Create function to get the data
 function Data(id) {
     d3.json("../../samples.json").then(function(sample_data){
         console.log(sample_data);
 
-        // Help with filtering: v33na @GitHub
+        // Help with filtering: v33na @GitHub - https://github.com/v33na/Belly-Button-Biodiversity/tree/master/static/js
         let filteredSampleInfo = sample_data.samples.filter(details => details.id.toString() === id)[0];
+        
 
         let sample_values = filteredSampleInfo.sample_values
         console.log(sample_values)
@@ -27,6 +27,8 @@ function Data(id) {
         })
         let otu_labels = filteredSampleInfo.otu_labels
         console.log(otu_labels) 
+
+        // Create horizontal bar graph
         let barTrace = {
             x: sample_values.slice(0,10).reverse(),
             y: top_otus.slice(0,10).reverse(),
@@ -69,11 +71,28 @@ function Data(id) {
       let bubbleLayout = {
         showlegend: false,
         height: 600,
-        width: 1200,
+        width: 900,
         
       };
       
       Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+
+    // Plot gauge chart
+    let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
+    let washingFreq = filteredWFreq.wfreq
+    console.log(washingFreq)
+    let data = [
+        {
+            domain: { x: [0, 9], y: [0, 9] },
+            value: washingFreq,
+            title: { text: "Scrubs Per Week" },
+            type: "indicator",
+            mode: "gauge+number"
+        }
+    ];
+    
+    let layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    Plotly.newPlot("gauge", data, layout);
     });
 }
 
