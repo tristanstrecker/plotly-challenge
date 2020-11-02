@@ -78,41 +78,49 @@ function Data(id) {
       Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
     // Plot gauge chart
+    // https://plotly.com/python/v3/gauge-charts/
     let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
     let washingFreq = filteredWFreq.wfreq
     console.log(washingFreq)
     let data = [
         {
-            domain: { x: [0, 9], y: [0, 9] },
+            // domain: { x: [0, 9], y: [0, 9] },
             value: washingFreq,
             title: { text: "Scrubs Per Week" },
             type: "indicator",
-            mode: "gauge+number+delta",
+            mode: "gauge+delta",
             // delta: { reference: 380 },
             gauge: {
               axis: { range: [null, 9] },
               steps: [
                 // { range: [0, 10], color: "gray" },
-                { range: [0, 1], color: "white" },
-                { range: [1, 2], color: "blue" },
-                { range: [2, 3], color: "blue" },
-                { range: [3, 4], color: "blue" },
-                { range: [4, 5], color: "blue" },
-                { range: [5, 6], color: "blue" },
-                { range: [6, 7], color: "blue" },
-                { range: [7, 8], color: "blue" },
-                { range: [8, 9], color: "blue" }
+                { range: [0, 1], color: '#bbdebb', text: ["0-1"] },
+                { range: [1, 2], color: '#a7d0a7' },
+                { range: [2, 3], color: '#89bd89' },
+                { range: [3, 4], color: '#7cb17c' },
+                { range: [4, 5], color: '#5f9a5f' },
+                { range: [5, 6], color: '#498c49' },
+                { range: [6, 7], color: '#2d732d' },
+                { range: [7, 8], color: '#1b691b' },
+                { range: [8, 9], color: '#095409' }
               ],
-            //   threshold: {
-            //     line: { color: "red", width: 4 },
-            //     thickness: 0.75,
-            //     value: 490
-            //   }
+            //    threshold: {
+            //      line: { color: "red", width: 4 },
+            //      thickness: 0.75,
+            //      value: 490
+            //    }
             }
           }
         ];
+    //
+    // https://code.tutsplus.com/tutorials/create-interactive-charts-using-plotlyjs-pie-and-gauge-charts--cms-29216
     
-    let layout = { width: 500, height: 500, margin: { t: 0, b: 0 } };
+    let layout = { 
+        width: 500, 
+        height: 500, 
+        margin: { t: 0, b: 0 },
+        showticklabels: true,
+    };
     Plotly.newPlot("gauge", data, layout);
     });
 }
