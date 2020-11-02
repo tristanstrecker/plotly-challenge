@@ -87,11 +87,24 @@ function Data(id) {
             value: washingFreq,
             title: { text: "Scrubs Per Week" },
             type: "indicator",
-            mode: "gauge+number"
-        }
-    ];
+            mode: "gauge+number+delta",
+            // delta: { reference: 380 },
+            gauge: {
+              axis: { range: [null, 10] },
+              steps: [
+                { range: [0, 10], color: "white" },
+                { range: [0, 10], color: "white" }
+              ],
+            //   threshold: {
+            //     line: { color: "red", width: 4 },
+            //     thickness: 0.75,
+            //     value: 490
+            //   }
+            }
+          }
+        ];
     
-    let layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    let layout = { width: 500, height: 500, margin: { t: 0, b: 0 } };
     Plotly.newPlot("gauge", data, layout);
     });
 }
