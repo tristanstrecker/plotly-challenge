@@ -103,15 +103,15 @@ function Data(id) {
               bar: { color: "#ffffffb3" },
               bordercolor: "white",	
               steps: [
-                { range: [0, 1], color: '#d2b091' },
-                { range: [1, 2], color: '#d2bc91' },
-                { range: [2, 3], color: '#d2ce91' }, 
-                { range: [3, 4], color: '#cad15f' }, 
-                { range: [4, 5], color: '#cac12a' }, 
-                { range: [5, 6], color: '#418c15e6' }, 
-                { range: [6, 7], color: '#228c15e6' }, 
-                { range: [7, 8], color: '#228c15' },
-                { range: [8, 9], color: '#0e7f00' }],
+                { range: [0, 1], color: '#d291917a' },
+                { range: [1, 2], color: '#d29191c7' },
+                { range: [2, 3], color: '#d291a8cc' }, 
+                { range: [3, 4], color: '#bb76a1cc' }, 
+                { range: [4, 5], color: '#b563a9cc' }, 
+                { range: [5, 6], color: '#ad5aa1' }, 
+                { range: [6, 7], color: '#8f4996' }, 
+                { range: [7, 8], color: '#7d3c84' },
+                { range: [8, 9], color: '#703177' }],
             }
           }
         ];
