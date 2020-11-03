@@ -89,11 +89,11 @@ function Data(id) {
             title: { text: "Scrubs Per Week" },
             type: "indicator",
             mode: "gauge+number",
-            // delta: { reference: 380 },
+            showlegend: false,
+            bar: { color: "white" },
             gauge: {
-              axis: { range: [null, 9] },
+              axis: { range: [null, 9], showticklabels: false, tickcolor: "white"},
               steps: [
-                // { range: [0, 10], color: "gray" },
                 { range: [0, 1], color: '#ffffff', title: "0-1" },
                 { range: [1, 2], color: '#e8e2ca' },
                 { range: [2, 3], color: '#d2ce91' }, 
@@ -102,28 +102,19 @@ function Data(id) {
                 { range: [5, 6], color: '#418c15e6' }, 
                 { range: [6, 7], color: '#228c15e6' }, 
                 { range: [7, 8], color: '#228c15' },
-                { range: [8, 9], color: '#0e7f00' }
-              ],
-            //    threshold: {
-            //      line: { color: "red", width: 4 },
-            //      thickness: 0.75,
-            //      value: 490
-            //    }
+                { range: [8, 9], color: '#0e7f00' }],
             }
           }
         ];
-    //
-    // https://code.tutsplus.com/tutorials/create-interactive-charts-using-plotlyjs-pie-and-gauge-charts--cms-29216
-    //
-    // https://www.zingchart.com/docs/chart-types/gauge
     
     let layout = { 
         width: 500, 
         height: 300, 
         margin: { t: 0, b: 0 },
-        showticklabels: true,
+        showticklabels: false,
     };
     Plotly.newPlot("gauge", data, layout);
+
     });
 }
 
