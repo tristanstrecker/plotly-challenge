@@ -5,8 +5,12 @@ body {
     font-family: 'Quicksand', sans-serif;
   }
 
-.left-margin {
+.lm-2 {
     margin-left: 2%;
+}
+
+.lm-5 {
+    margin-left: 5%;
 }
 
 .panel-primary>.panel-heading {
