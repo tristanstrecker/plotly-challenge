@@ -1,0 +1,13 @@
+.left-margin {
+    margin-left: 2%;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #8e7cc3;
+    border-color: #8e7cc3;
+}
+
+.panel-primary {
+    border-color: #8e7cc3;
+}

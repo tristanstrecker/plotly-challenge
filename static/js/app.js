@@ -36,12 +36,16 @@ function Data(id) {
             y: top_otus.slice(0,10).reverse(),
             text: otu_labels,
             type: "bar",
-            orientation: "h"
+            orientation: "h",
+            marker: {
+                color: "rgb(142,124,195)"
+            }
         };
         let barData = [barTrace];
 
+        let subject_id = filteredSampleInfo.id
         let barLayout = {
-            title: "Top OTU IDs",
+            title: `Top OTU IDs for Subject ${subject_id}`,
             yaxis:{
                 tickmode:"linear",
             },
