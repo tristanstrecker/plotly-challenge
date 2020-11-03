@@ -86,6 +86,7 @@ function Data(id) {
 
     // Plot gauge chart
     // https://plotly.com/python/v3/gauge-charts/
+    // https://codepen.io/pen/?editors=0010
     let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
     let washingFreq = filteredWFreq.wfreq
     console.log(washingFreq)
@@ -93,12 +94,12 @@ function Data(id) {
         {
             // domain: { x: [0, 9], y: [0, 9], stroke: "white" },
             value: washingFreq,
-            title: { text: "Scrubs Per Week" },
+            title: { text: "Scrubs Per Week", font: { family: 'Quicksand, sans-serif'}
+            },
             type: "indicator",
             mode: "gauge+number",
-            strokecolor: "white",
             gauge: {
-              axis: { range: [null, 9], showticklabels: false, tickcolor: "white", strokecolor: "white" },
+              axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "white"},
               bar: { color: "#ffffffb3" },
               bordercolor: "white",	
               steps: [
