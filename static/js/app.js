@@ -14,17 +14,19 @@ function Data(id) {
     d3.json("samples.json").then(function(sample_data){
         console.log(sample_data);
 
-        // Help with filtering: v33na @GitHub - https://github.com/v33na/Belly-Button-Biodiversity/tree/master/static/js
         let filteredSampleInfo = sample_data.samples.filter(details => details.id.toString() === id)[0];
         
 
         let sample_values = filteredSampleInfo.sample_values
         console.log(sample_values)
+
         let otu_ids = filteredSampleInfo.otu_ids
         console.log(otu_ids) 
+
         let top_otus = otu_ids.map(function(otuNumber){
             return "OTU " + otuNumber;
         })
+        
         let otu_labels = filteredSampleInfo.otu_labels
         console.log(otu_labels) 
 
@@ -33,8 +35,6 @@ function Data(id) {
             x: sample_values.slice(0,10).reverse(),
             y: top_otus.slice(0,10).reverse(),
             text: otu_labels,
-            marker: {
-                color: 'lightpurple'},
             type: "bar",
             orientation: "h"
         };
