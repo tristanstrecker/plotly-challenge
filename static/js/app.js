@@ -91,24 +91,25 @@ function Data(id) {
     console.log(washingFreq)
     let data = [
         {
-            // domain: { x: [0, 9], y: [0, 9] },
+            // domain: { x: [0, 9], y: [0, 9], stroke: "white" },
             value: washingFreq,
             title: { text: "Scrubs Per Week" },
             type: "indicator",
             mode: "gauge+number",
-            showlegend: false,
+            strokecolor: "white",
             gauge: {
-              axis: { range: [null, 9], showticklabels: false, tickcolor: "white"},
-              bar: { color: "#00000091" },
+              axis: { range: [null, 9], showticklabels: false, tickcolor: "white", strokecolor: "white" },
+              bar: { color: "#ffffffb3" },
               labels: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1'],
+              text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1'],
               textinfo: 'text',
               textposition:'inside',	
               steps: [
-                { range: [0, 1], color: '#ffffff', id: "0-1" },
-                { range: [1, 2], color: '#e8e2ca' },
+                { range: [0, 1], color: '#d2b091', stroke: "white", strokecolor: "white"},
+                { range: [1, 2], color: '#d2bc91' },
                 { range: [2, 3], color: '#d2ce91' }, 
                 { range: [3, 4], color: '#cad15f' }, 
-                { range: [4, 5], color: '#aaca2a' }, 
+                { range: [4, 5], color: '#cac12a' }, 
                 { range: [5, 6], color: '#418c15e6' }, 
                 { range: [6, 7], color: '#228c15e6' }, 
                 { range: [7, 8], color: '#228c15' },
