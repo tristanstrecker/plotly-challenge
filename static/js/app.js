@@ -117,8 +117,8 @@ function Data(id) {
     
     let layout = { 
         width: 500, 
-        height: 300, 
-        margin: { t: 0, b: 0 },
+        height: 250, 
+        margin: { t: 30, b: 0, l:0, r:0},
         showticklabels: false,
     };
     Plotly.newPlot("gauge", data, layout);
