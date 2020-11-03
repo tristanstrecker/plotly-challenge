@@ -26,7 +26,7 @@ function Data(id) {
         let top_otus = otu_ids.map(function(otuNumber){
             return "OTU " + otuNumber;
         })
-        
+
         let otu_labels = filteredSampleInfo.otu_labels
         console.log(otu_labels) 
 
@@ -94,15 +94,15 @@ function Data(id) {
               axis: { range: [null, 9] },
               steps: [
                 // { range: [0, 10], color: "gray" },
-                { range: [0, 1], color: '#bbdebb', title: "0-1" },
-                { range: [1, 2], color: '#a7d0a7' },
-                { range: [2, 3], color: '#89bd89' },
-                { range: [3, 4], color: '#7cb17c' },
-                { range: [4, 5], color: '#5f9a5f' },
-                { range: [5, 6], color: '#498c49' },
-                { range: [6, 7], color: '#2d732d' },
-                { range: [7, 8], color: '#1b691b' },
-                { range: [8, 9], color: '#095409' }
+                { range: [0, 1], color: '#ffffff', title: "0-1" },
+                { range: [1, 2], color: '#e8e2ca' },
+                { range: [2, 3], color: '#d2ce91' }, 
+                { range: [3, 4], color: '#cad15f' }, 
+                { range: [4, 5], color: '#aaca2a' }, 
+                { range: [5, 6], color: '#418c15e6' }, 
+                { range: [6, 7], color: '#228c15e6' }, 
+                { range: [7, 8], color: '#228c15' },
+                { range: [8, 9], color: '#0e7f00' }
               ],
             //    threshold: {
             //      line: { color: "red", width: 4 },
