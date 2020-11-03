@@ -75,7 +75,7 @@ function Data(id) {
       let bubbleLayout = {
         showlegend: false,
         height: 600,
-        width: 900,
+        width: 1200,
         
       };
       
