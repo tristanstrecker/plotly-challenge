@@ -121,6 +121,7 @@ function Data(id) {
         height: 250, 
         margin: { t: 30, b: 0, l:0, r:0},
         showticklabels: false,
+        font: { family: "Quicksand" }
     };
     Plotly.newPlot("gauge", data, layout);
 
