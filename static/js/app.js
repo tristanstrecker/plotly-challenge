@@ -90,11 +90,14 @@ function Data(id) {
             type: "indicator",
             mode: "gauge+number",
             showlegend: false,
-            bar: { color: "white" },
             gauge: {
               axis: { range: [null, 9], showticklabels: false, tickcolor: "white"},
+              bar: { color: "#00000091" },
+              labels: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1'],
+              textinfo: 'text',
+              textposition:'inside',	
               steps: [
-                { range: [0, 1], color: '#ffffff', title: "0-1" },
+                { range: [0, 1], color: '#ffffff', id: "0-1" },
                 { range: [1, 2], color: '#e8e2ca' },
                 { range: [2, 3], color: '#d2ce91' }, 
                 { range: [3, 4], color: '#cad15f' }, 
