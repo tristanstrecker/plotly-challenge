@@ -100,12 +100,9 @@ function Data(id) {
             gauge: {
               axis: { range: [null, 9], showticklabels: false, tickcolor: "white", strokecolor: "white" },
               bar: { color: "#ffffffb3" },
-              labels: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1'],
-              text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1'],
-              textinfo: 'text',
-              textposition:'inside',	
+              bordercolor: "white",	
               steps: [
-                { range: [0, 1], color: '#d2b091', stroke: "white", strokecolor: "white"},
+                { range: [0, 1], color: '#d2b091' },
                 { range: [1, 2], color: '#d2bc91' },
                 { range: [2, 3], color: '#d2ce91' }, 
                 { range: [3, 4], color: '#cad15f' }, 
