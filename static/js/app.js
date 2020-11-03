@@ -38,7 +38,7 @@ function Data(id) {
             type: "bar",
             orientation: "h",
             marker: {
-                color: "rgb(142,124,195)"
+                color: "#6b5b9c"
             }
         };
         let barData = [barTrace];
@@ -46,6 +46,9 @@ function Data(id) {
         let subject_id = filteredSampleInfo.id
         let barLayout = {
             title: `Top OTU IDs for Subject ${subject_id}`,
+            font:{
+                family: 'Quicksand, sans-serif'
+              },
             yaxis:{
                 tickmode:"linear",
             },
@@ -75,7 +78,7 @@ function Data(id) {
       let bubbleLayout = {
         showlegend: false,
         height: 600,
-        width: 1200,
+        width: 1000,
         
       };
       
