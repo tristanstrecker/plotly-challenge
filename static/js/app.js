@@ -50,6 +50,7 @@ function Data(id) {
             font:{
                 family: 'Quicksand, sans-serif'
               },
+            xaxis: {gridcolor: '#fff', zerolinecolor: '#5a5a5a'},
             yaxis:{
                 tickmode:"linear",
             },
@@ -83,7 +84,10 @@ function Data(id) {
         height: 600,
         width: 1000,
         plot_bgcolor: "#e0e0e0",
-        paper_bgcolor: "#e0e0e0"
+        paper_bgcolor: "#e0e0e0",
+        xaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
+        yaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
+        
       };
       
       Plotly.newPlot("bubble", bubbleData, bubbleLayout);
