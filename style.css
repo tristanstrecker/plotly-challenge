@@ -14,9 +14,13 @@ body {
     margin-left: 5%;
 }
 
-.tb-m {
+.tb-nm {
     margin-top: -3px;
     margin-bottom: -3px;
+}
+.tb-m {
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 
 .panel-primary>.panel-heading {
@@ -32,20 +36,20 @@ body {
 .panel {
     margin-bottom: 20px;
     background-color: #fff;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #2b2929;
     border-radius: 6px;
     /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: -2px 2px 7px rgb(0 0 0 / 52%); */
 }
 
-.pandel-heading {
+.panel-heading {
     padding: 10px 15px;
     border-bottom: 1px solid;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     border-color: #2b2929!important;
-    margin-right: -1%;
+    /* margin-right: -1%!important; */
 }
 
 .jumbotron-bg {
