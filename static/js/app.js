@@ -103,9 +103,9 @@ function Data(id) {
             type: "indicator",
             mode: "gauge+number",
             gauge: {
-              axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "white"},
+              axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "e0e0e0"},
               bar: { color: "#ffffffb3" },
-              bordercolor: "white",	
+              bordercolor: "e0e0e0",	
               steps: [
                 { range: [0, 1], color: '#d291917a' },
                 { range: [1, 2], color: '#d29191c7' },
