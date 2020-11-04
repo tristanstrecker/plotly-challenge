@@ -38,8 +38,9 @@ function Data(id) {
             type: "bar",
             orientation: "h",
             marker: {
-                color: "#6b5b9c"
-            }
+                color: "#6b5b9c",
+            },
+            bgcolor: "#e0e0e0"
         };
         let barData = [barTrace];
 
@@ -57,7 +58,9 @@ function Data(id) {
                 r: 75,
                 t: 25,
                 b: 50
-            }
+            },
+            plot_bgcolor: "#e0e0e0",
+            paper_bgcolor: "#e0e0e0"
         };
     Plotly.newPlot("bar", barData, barLayout)   
     
@@ -121,7 +124,7 @@ function Data(id) {
         height: 250, 
         margin: { t: 30, b: 0, l:0, r:0},
         showticklabels: false,
-        font: { family: "Quicksand" }
+        font: { family: "Quicksand" },
     };
     Plotly.newPlot("gauge", data, layout);
 
