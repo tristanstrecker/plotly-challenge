@@ -82,7 +82,8 @@ function Data(id) {
         showlegend: false,
         height: 600,
         width: 1000,
-        
+        plot_bgcolor: "#e0e0e0",
+        paper_bgcolor: "#e0e0e0"
       };
       
       Plotly.newPlot("bubble", bubbleData, bubbleLayout);
@@ -125,6 +126,8 @@ function Data(id) {
         margin: { t: 30, b: 0, l:0, r:0},
         showticklabels: false,
         font: { family: "Quicksand" },
+        plot_bgcolor: "#e0e0e0",
+        paper_bgcolor: "#e0e0e0"
     };
     Plotly.newPlot("gauge", data, layout);
 
