@@ -48,7 +48,8 @@ function Data(id) {
         let barLayout = {
             title: `Top Ten OTU Values for Subject ${subject_id}`,
             font:{
-                family: 'Quicksand, sans-serif'
+                family: 'Quicksand, sans-serif',
+                size: 14
               },
             xaxis: {gridcolor: '#fff', zerolinecolor: '#5a5a5a'},
             yaxis:{
@@ -57,7 +58,7 @@ function Data(id) {
             margin: {
                 l: 75,
                 r: 75,
-                t: 25,
+                t: 35,
                 b: 50
             },
             plot_bgcolor: "transparent",
@@ -87,6 +88,7 @@ function Data(id) {
           },
         font:{
             family: 'Quicksand, sans-serif',
+            size: 14
           },
         showlegend: false,
         height: 600,
