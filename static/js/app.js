@@ -164,7 +164,7 @@ function Demographics(id) {
         demographicInfo.html("");
     
         Object.entries(filteredDemoInfo).forEach(function([key, value]) {   
-            demographicInfo.append("h5").text(`${key}: ${value}`);    
+            demographicInfo.append("h4").text(`${key}: ${value}`);    
         });
     });
 }
