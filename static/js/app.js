@@ -40,7 +40,7 @@ function Data(id) {
             marker: {
                 color: "#6b5b9c",
             },
-            bgcolor: "#e0e0e0"
+            bgcolor: "transparent"
         };
         let barData = [barTrace];
 
@@ -60,8 +60,8 @@ function Data(id) {
                 t: 25,
                 b: 50
             },
-            plot_bgcolor: "#e0e0e0",
-            paper_bgcolor: "#e0e0e0"
+            plot_bgcolor: "transparent",
+            paper_bgcolor: "transparent"
         };
     Plotly.newPlot("bar", barData, barLayout)   
     
@@ -87,8 +87,8 @@ function Data(id) {
         showlegend: false,
         height: 600,
         width: 1000,
-        plot_bgcolor: "#e0e0e0",
-        paper_bgcolor: "#e0e0e0",
+        plot_bgcolor: "transparent",
+        paper_bgcolor: "transparent",
         xaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
         yaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
         
@@ -111,9 +111,9 @@ function Data(id) {
             type: "indicator",
             mode: "gauge+number",
             gauge: {
-              axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "e0e0e0"},
+              axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "transparent"},
               bar: { color: "#ffffffb3" },
-              bordercolor: "e0e0e0",	
+              bordercolor: "transparent",	
               steps: [
                 { range: [0, 1], color: '#d291917a' },
                 { range: [1, 2], color: '#d29191c7' },
@@ -134,8 +134,8 @@ function Data(id) {
         margin: { t: 30, b: 0, l:0, r:0},
         showticklabels: false,
         font: { family: "Quicksand" },
-        plot_bgcolor: "#e0e0e0",
-        paper_bgcolor: "#e0e0e0"
+        plot_bgcolor: "transparent",
+        paper_bgcolor: "transparent"
     };
     Plotly.newPlot("gauge", data, layout);
 
