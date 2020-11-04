@@ -81,8 +81,12 @@ function Data(id) {
       
       let bubbleLayout = {
         title: `All OTU Values for Subject ${subject_id}`,
+        titlefont:{
+            family: 'Quicksand, sans-serif',
+            size: 28
+          },
         font:{
-            family: 'Quicksand, sans-serif'
+            family: 'Quicksand, sans-serif',
           },
         showlegend: false,
         height: 600,
