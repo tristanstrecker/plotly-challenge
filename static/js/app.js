@@ -47,6 +47,10 @@ function Data(id) {
         let subject_id = filteredSampleInfo.id
         let barLayout = {
             title: `Top Ten OTU Values for Subject ${subject_id}`,
+            titlefont:{
+                family: 'Quicksand, sans-serif',
+                size: 28
+              },
             font:{
                 family: 'Quicksand, sans-serif',
                 size: 14
@@ -58,7 +62,7 @@ function Data(id) {
             margin: {
                 l: 75,
                 r: 75,
-                t: 35,
+                t: 50,
                 b: 50
             },
             plot_bgcolor: "transparent",
