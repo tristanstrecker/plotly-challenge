@@ -18,9 +18,14 @@ body {
     margin-top: -3px;
     margin-bottom: -3px;
 }
+
 .tb-m {
     margin-bottom: 3px;
     margin-top: 3px;
+}
+
+.t-m {
+    margin-top: -1.5%;
 }
 
 .panel-primary>.panel-heading {
