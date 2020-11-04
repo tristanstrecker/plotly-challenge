@@ -46,7 +46,7 @@ function Data(id) {
 
         let subject_id = filteredSampleInfo.id
         let barLayout = {
-            title: `Top OTU IDs for Subject ${subject_id}`,
+            title: `Top Ten OTU Values for Subject ${subject_id}`,
             font:{
                 family: 'Quicksand, sans-serif'
               },
@@ -80,6 +80,10 @@ function Data(id) {
       let bubbleData = [bubbleTrace];
       
       let bubbleLayout = {
+        title: `All OTU Values for Subject ${subject_id}`,
+        font:{
+            family: 'Quicksand, sans-serif'
+          },
         showlegend: false,
         height: 600,
         width: 1000,
