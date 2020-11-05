@@ -159,7 +159,7 @@ function Data(id) {
                 color: '#4e4e4e'
             }
             }],
-        autosize:true,
+        autosize: true,
         xaxis: {zeroline:false, showticklabels:false,
                 showgrid: false, range: [-1, 1]},
         yaxis: {zeroline:false, showticklabels:false,
@@ -169,8 +169,6 @@ function Data(id) {
         paper_bgcolor: "transparent",
         title: 'Scrubs per Week',
         titlefont: { family: "Quicksand", size: 24 },
-        width: 500, 
-        height: 250, 
         margin: { t: 40, b: 0, l:0, r:0},
         };
         
