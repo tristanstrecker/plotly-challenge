@@ -1,4 +1,4 @@
-// Populate initial demographics
+// Populate initial demographics and charts
 d3.json("samples.json").then(function(sample_data){
     console.log(sample_data);
 // Populate dropdown
