@@ -112,41 +112,106 @@ function Data(id) {
     let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
     let washingFreq = filteredWFreq.wfreq
     console.log(washingFreq)
-    let data = [
-        {
-            // domain: { x: [0, 9], y: [0, 9], stroke: "white" },
-            value: washingFreq,
-            title: { text: "Scrubs Per Week", font: { family: 'Quicksand, sans-serif'}
-            },
-            type: "indicator",
-            mode: "gauge+number",
-            gauge: {
-              axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "transparent"},
-              bar: { color: "#ffffffb3" },
-              bordercolor: "transparent",	
-              steps: [
-                { range: [0, 1], color: '#d291917a' },
-                { range: [1, 2], color: '#d29191c7' },
-                { range: [2, 3], color: '#d291a8cc' }, 
-                { range: [3, 4], color: '#bb76a1cc' }, 
-                { range: [4, 5], color: '#b563a9cc' }, 
-                { range: [5, 6], color: '#ad5aa1' }, 
-                { range: [6, 7], color: '#8f4996' }, 
-                { range: [7, 8], color: '#7d3c84' },
-                { range: [8, 9], color: '#703177' }],
-            }
-          }
-        ];
+    // let data = [
+    //     {
+    //         // domain: { x: [0, 9], y: [0, 9], stroke: "white" },
+    //         value: washingFreq,
+    //         title: { text: "Scrubs Per Week", font: { family: 'Quicksand, sans-serif'}
+    //         },
+    //         type: "indicator",
+    //         mode: "gauge+number",
+    //         gauge: {
+    //           axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "transparent"},
+    //           bar: { color: "#ffffffb3" },
+    //           bordercolor: "transparent",	
+    //           steps: [
+    //             { range: [0, 1], color: '#d291917a' },
+    //             { range: [1, 2], color: '#d29191c7' },
+    //             { range: [2, 3], color: '#d291a8cc' }, 
+    //             { range: [3, 4], color: '#bb76a1cc' }, 
+    //             { range: [4, 5], color: '#b563a9cc' }, 
+    //             { range: [5, 6], color: '#ad5aa1' }, 
+    //             { range: [6, 7], color: '#8f4996' }, 
+    //             { range: [7, 8], color: '#7d3c84' },
+    //             { range: [8, 9], color: '#703177' }],
+    //         }
+    //       }
+    //     ];
     
-    let layout = { 
-        width: 500, 
-        height: 250, 
-        margin: { t: 30, b: 0, l:0, r:0},
-        showticklabels: false,
-        font: { family: "Quicksand" },
-        plot_bgcolor: "transparent",
-        paper_bgcolor: "transparent"
-    };
+    // let layout = { 
+    //     width: 500, 
+    //     height: 250, 
+    //     margin: { t: 30, b: 0, l:0, r:0},
+    //     showticklabels: false,
+    //     font: { family: "Quicksand" },
+    //     plot_bgcolor: "transparent",
+    //     paper_bgcolor: "transparent"
+    // };
+
+        // Enter a speed between 0 and 180
+        var level = washingFreq;
+
+        // Trig to calc meter point
+        function gaugePointer(value){
+            
+        var degrees = 180 - value,
+            radius = .5;
+        var radians = degrees * Math.PI / 180;
+        var x = radius * Math.cos(radians);
+        var y = radius * Math.sin(radians);
+    
+        // Path: may have to change to create a better triangle
+        var mainPath = 'M -.0 -0.035 L .0 0.035 L ',
+            pathX = String(x),
+            space = ' ',
+            pathY = String(y),
+            pathEnd = ' Z';
+        var path = mainPath.concat(pathX,space,pathY,pathEnd);
+            
+            return path;
+    
+        }
+    
+        let data = [{ type: 'scatter',
+                x: [0], y:[0],
+                value: level,
+                marker: {size: 18, color:'black'},
+                showlegend: false,
+                name: 'speed',
+                text: level,
+                hoverinfo: 'text+name'},
+            { values: [50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50],
+            rotation: 90,
+            text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1', ''],
+            textinfo: 'text',
+            textposition:'inside',	  
+            marker: {colors:['#703177','#7d3c84', '#8f4996', '#ad5aa1', '#b563a9cc','#bb76a1cc', '#d291a8cc', '#d29191c7', 'd291917a', 'transparent']},
+            labels: ['8-9', '7-8', '6-7', '5-6','4-5', '3-4', '2-3', '1-2', '0-1', ''],
+            hoverinfo: 'label',
+            hole: .5,
+            type: 'pie',
+            showlegend: false
+            }];
+    
+        var layout = {
+        shapes:[{
+            type: 'path',
+            path: gaugePointer(washingFreq),
+            fillcolor: 'black',
+            line: {
+                color: 'black'
+            }
+            }],
+            autosize:true,
+            xaxis: {zeroline:false, showticklabels:false,
+                    showgrid: false, range: [-1, 1]},
+            yaxis: {zeroline:false, showticklabels:false,
+                    showgrid: false, range: [-1, 1]},
+            font: { family: "Quicksand" },
+            plot_bgcolor: "transparent",
+            paper_bgcolor: "transparent"
+        };
+    
     Plotly.newPlot("gauge", data, layout);
 
     });
