@@ -30,6 +30,7 @@ function Data(id) {
         console.log(otu_labels) 
 
         // Create horizontal bar graph
+        // https://plotly.com/javascript/bar-charts/#bar-chart-with-hover-text
         let barTrace = {
             x: sample_values.slice(0,10).reverse(),
             y: top_otus.slice(0,10).reverse(),
@@ -115,7 +116,6 @@ function Data(id) {
 
         // Plot gauge chart
         // https://plotly.com/python/v3/gauge-charts/
-        // https://codepen.io/pen/?editors=0010
         // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
         let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
         let washingFreq = filteredWFreq.wfreq
