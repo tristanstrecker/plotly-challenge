@@ -67,11 +67,12 @@ h4 {
     background-color: #000000d9!important;
 }
 
-.col {
+.c-col {
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    float: left;
 }
 
 @media (min-width: 992px) {

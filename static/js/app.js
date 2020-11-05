@@ -96,11 +96,17 @@ function Data(id) {
           },
         showlegend: false,
         height: 600,
-        width: 1000,
+        width: 1200,
         plot_bgcolor: "transparent",
         paper_bgcolor: "transparent",
         xaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
         yaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
+        margin: {
+            l: 50,
+            r: 0,
+            t: 50,
+            b: 50
+        },
         
       };
       
