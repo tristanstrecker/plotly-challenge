@@ -55,4 +55,4 @@ Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly 
 © 2019 Trilogy Education Services
 
 The site can be accessed <a href=https://adrianstrecker.github.io/plotly-challenge/index.html>here</a><br>
-<img src="https://raw.githubusercontent.com/adrianstrecker/plotly-challenge/main/Images/index.png" width="800">
+<img src="https://raw.githubusercontent.com/adrianstrecker/plotly-challenge/main/Images/index.png" width="1000">
