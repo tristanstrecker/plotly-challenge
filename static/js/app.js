@@ -133,7 +133,7 @@ function Data(id) {
         let gaugeData = [{ type: 'scatter',
             x: [0], y:[0],
             value: level,
-            marker: {size: 18, color:'#4e4e4e'},
+            marker: {size: 28, color:'#4e4e4e'},
             showlegend: false,
             name: 'Washing Frequency',
             text: level/20,
