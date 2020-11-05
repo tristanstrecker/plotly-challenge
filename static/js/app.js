@@ -112,47 +112,8 @@ function Data(id) {
     let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
     let washingFreq = filteredWFreq.wfreq
     console.log(washingFreq)
-    // let data = [
-    //     {
-    //         // domain: { x: [0, 9], y: [0, 9], stroke: "white" },
-    //         value: washingFreq,
-    //         title: { text: "Scrubs Per Week", font: { family: 'Quicksand, sans-serif'}
-    //         },
-    //         type: "indicator",
-    //         mode: "gauge+number",
-    //         gauge: {
-    //           axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "transparent"},
-    //           bar: { color: "#ffffffb3" },
-    //           bordercolor: "transparent",	
-    //           steps: [
-    //             { range: [0, 1], color: '#d291917a' },
-    //             { range: [1, 2], color: '#d29191c7' },
-    //             { range: [2, 3], color: '#d291a8cc' }, 
-    //             { range: [3, 4], color: '#bb76a1cc' }, 
-    //             { range: [4, 5], color: '#b563a9cc' }, 
-    //             { range: [5, 6], color: '#ad5aa1' }, 
-    //             { range: [6, 7], color: '#8f4996' }, 
-    //             { range: [7, 8], color: '#7d3c84' },
-    //             { range: [8, 9], color: '#703177' }],
-    //         }
-    //       }
-    //     ];
-    
-    // let layout = { 
-    //     width: 500, 
-    //     height: 250, 
-    //     margin: { t: 30, b: 0, l:0, r:0},
-    //     showticklabels: false,
-    //     font: { family: "Quicksand" },
-    //     plot_bgcolor: "transparent",
-    //     paper_bgcolor: "transparent"
-    // };
 
-        // Enter a speed between 0 and 180
-        
-
-        // Trig to calc meter point
-        // function gaugePointer(value){
+      // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
         let level = parseFloat(washingFreq)*20;    
         let degrees = 180 - level,
             radius = .5;
@@ -168,13 +129,10 @@ function Data(id) {
             pathEnd = ' Z';
         let path = mainPath.concat(pathX,space,pathY,pathEnd);
             
-            // return path;
-    
-    
         let gaugeData = [{ type: 'scatter',
             x: [0], y:[0],
             value: level,
-            marker: {size: 18, color:'black'},
+            marker: {size: 18, color:'#4e4e4e'},
             showlegend: false,
             name: 'Washing Frequency',
             text: level/20,
@@ -196,19 +154,24 @@ function Data(id) {
         shapes:[{
             type: 'path',
             path: path,
-            fillcolor: 'black',
+            fillcolor: '#4e4e4e',
             line: {
-                color: 'black'
+                color: '#4e4e4e'
             }
             }],
-            autosize:true,
-            xaxis: {zeroline:false, showticklabels:false,
-                    showgrid: false, range: [-1, 1]},
-            yaxis: {zeroline:false, showticklabels:false,
-                    showgrid: false, range: [-1, 1]},
-            font: { family: "Quicksand" },
-            plot_bgcolor: "transparent",
-            paper_bgcolor: "transparent"
+        autosize:true,
+        xaxis: {zeroline:false, showticklabels:false,
+                showgrid: false, range: [-1, 1]},
+        yaxis: {zeroline:false, showticklabels:false,
+                showgrid: false, range: [-1, 1]},
+        font: { family: "Quicksand" },
+        plot_bgcolor: "transparent",
+        paper_bgcolor: "transparent",
+        title: 'Scrubs per Week',
+        titlefont: { family: "Quicksand", size: 24 },
+        width: 500, 
+        height: 250, 
+        margin: { t: 40, b: 0, l:0, r:0},
         };
         
     Plotly.newPlot("gauge", gaugeData, layout);
@@ -237,6 +200,18 @@ function optionChanged(id) {
     Data(id);
     Demographics(id);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // UNUSED CODE AS TRYING TO PROCESS
     // Retrieve data
@@ -271,3 +246,40 @@ function optionChanged(id) {
         // let slicedLabels =  otu_labels.map(function(value) {
         //     return value.slice(0, 10);
         // });
+
+
+        // let data = [
+        //     {
+        //         // domain: { x: [0, 9], y: [0, 9], stroke: "white" },
+        //         value: washingFreq,
+        //         title: { text: "Scrubs Per Week", font: { family: 'Quicksand, sans-serif'}
+        //         },
+        //         type: "indicator",
+        //         mode: "gauge+number",
+        //         gauge: {
+        //           axis: { range: [null, 9], showticklabels: false, tickwidth: 0, tickcolor: "transparent"},
+        //           bar: { color: "#ffffffb3" },
+        //           bordercolor: "transparent",	
+        //           steps: [
+        //             { range: [0, 1], color: '#d291917a' },
+        //             { range: [1, 2], color: '#d29191c7' },
+        //             { range: [2, 3], color: '#d291a8cc' }, 
+        //             { range: [3, 4], color: '#bb76a1cc' }, 
+        //             { range: [4, 5], color: '#b563a9cc' }, 
+        //             { range: [5, 6], color: '#ad5aa1' }, 
+        //             { range: [6, 7], color: '#8f4996' }, 
+        //             { range: [7, 8], color: '#7d3c84' },
+        //             { range: [8, 9], color: '#703177' }],
+        //         }
+        //       }
+        //     ];
+        
+        // let layout = { 
+        //     width: 500, 
+        //     height: 250, 
+        //     margin: { t: 30, b: 0, l:0, r:0},
+        //     showticklabels: false,
+        //     font: { family: "Quicksand" },
+        //     plot_bgcolor: "transparent",
+        //     paper_bgcolor: "transparent"
+        // };
