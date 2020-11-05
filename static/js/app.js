@@ -149,37 +149,36 @@ function Data(id) {
     // };
 
         // Enter a speed between 0 and 180
-        var level = washingFreq;
+        
 
         // Trig to calc meter point
-        function gaugePointer(value){
-            
-        var degrees = 180 - value,
+        // function gaugePointer(value){
+        let level = parseFloat(washingFreq)*20;    
+        let degrees = 180 - level,
             radius = .5;
-        var radians = degrees * Math.PI / 180;
-        var x = radius * Math.cos(radians);
-        var y = radius * Math.sin(radians);
+        let radians = (degrees * Math.PI) / 180;
+        let x = radius * Math.cos(radians);
+        let y = radius * Math.sin(radians);
     
-        // Path: may have to change to create a better triangle
-        var mainPath = 'M -.0 -0.035 L .0 0.035 L ',
+        
+        let mainPath = 'M -.0 -0.05 L .0 0.05 L ',
             pathX = String(x),
             space = ' ',
             pathY = String(y),
             pathEnd = ' Z';
-        var path = mainPath.concat(pathX,space,pathY,pathEnd);
+        let path = mainPath.concat(pathX,space,pathY,pathEnd);
             
-            return path;
+            // return path;
     
-        }
     
-        let data = [{ type: 'scatter',
-                x: [0], y:[0],
-                value: level,
-                marker: {size: 18, color:'black'},
-                showlegend: false,
-                name: 'speed',
-                text: level,
-                hoverinfo: 'text+name'},
+        let gaugeData = [{ type: 'scatter',
+            x: [0], y:[0],
+            value: level,
+            marker: {size: 18, color:'black'},
+            showlegend: false,
+            name: 'Washing Frequency',
+            text: level,
+            hoverinfo: 'text+name'},
             { values: [50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50],
             rotation: 90,
             text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1', ''],
@@ -192,11 +191,11 @@ function Data(id) {
             type: 'pie',
             showlegend: false
             }];
-    
-        var layout = {
+        
+        let layout = {
         shapes:[{
             type: 'path',
-            path: gaugePointer(washingFreq),
+            path: path,
             fillcolor: 'black',
             line: {
                 color: 'black'
@@ -211,9 +210,9 @@ function Data(id) {
             plot_bgcolor: "transparent",
             paper_bgcolor: "transparent"
         };
+        
+    Plotly.newPlot("gauge", gaugeData, layout);
     
-    Plotly.newPlot("gauge", data, layout);
-
     });
 }
 
