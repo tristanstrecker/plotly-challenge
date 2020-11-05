@@ -71,7 +71,8 @@ function Data(id) {
         };
     Plotly.newPlot("bar", barData, barLayout)   
     
-    // https://plotly.com/javascript/bubble-charts/
+        // Plot bubble chart
+        // https://plotly.com/javascript/bubble-charts/
         let bubbleTrace = {
             x: otu_ids,
             y: sample_values,
@@ -81,7 +82,7 @@ function Data(id) {
             color: otu_ids
             },
             text: otu_labels
-      };
+        };
       
         let bubbleData = [bubbleTrace];
       
