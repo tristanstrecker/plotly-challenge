@@ -177,7 +177,7 @@ function Data(id) {
             marker: {size: 18, color:'black'},
             showlegend: false,
             name: 'Washing Frequency',
-            text: level,
+            text: level/20,
             hoverinfo: 'text+name'},
             { values: [50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50],
             rotation: 90,
