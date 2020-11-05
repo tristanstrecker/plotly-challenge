@@ -15,8 +15,7 @@ function Data(id) {
         console.log(sample_data);
 
         let filteredSampleInfo = sample_data.samples.filter(details => details.id.toString() === id)[0];
-        
-
+    
         let sample_values = filteredSampleInfo.sample_values
         console.log(sample_values)
 
@@ -42,9 +41,11 @@ function Data(id) {
             },
             bgcolor: "transparent"
         };
+
         let barData = [barTrace];
 
         let subject_id = filteredSampleInfo.id
+
         let barLayout = {
             title: `Top Ten OTU Values for Subject ${subject_id}`,
             titlefont:{
@@ -71,56 +72,54 @@ function Data(id) {
     Plotly.newPlot("bar", barData, barLayout)   
     
     // https://plotly.com/javascript/bubble-charts/
-    let bubbleTrace = {
-        x: otu_ids,
-        y: sample_values,
-        mode: 'markers',
-        marker: {
-          size: sample_values,
-          color: otu_ids
-        },
-        text: otu_labels
+        let bubbleTrace = {
+            x: otu_ids,
+            y: sample_values,
+            mode: 'markers',
+            marker: {
+            size: sample_values,
+            color: otu_ids
+            },
+            text: otu_labels
       };
       
-      let bubbleData = [bubbleTrace];
+        let bubbleData = [bubbleTrace];
       
-      let bubbleLayout = {
-        title: `All OTU Values for Subject ${subject_id}`,
-        titlefont:{
-            family: 'Quicksand, sans-serif',
-            size: 28
-          },
-        font:{
-            family: 'Quicksand, sans-serif',
-            size: 14
-          },
-        showlegend: false,
-        height: 600,
-        width: 1200,
-        plot_bgcolor: "transparent",
-        paper_bgcolor: "transparent",
-        xaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
-        yaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
-        margin: {
-            l: 50,
-            r: 0,
-            t: 50,
-            b: 50
-        },
-        
+        let bubbleLayout = {
+            title: `All OTU Values for Subject ${subject_id}`,
+            titlefont:{
+                family: 'Quicksand, sans-serif',
+                size: 28
+            },
+            font:{
+                family: 'Quicksand, sans-serif',
+                size: 14
+            },
+            showlegend: false,
+            height: 600,
+            width: 1200,
+            plot_bgcolor: "transparent",
+            paper_bgcolor: "transparent",
+            xaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
+            yaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
+            margin: {
+                l: 50,
+                r: 0,
+                t: 50,
+                b: 50
+            }, 
       };
       
       Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
-    // Plot gauge chart
-    // https://plotly.com/python/v3/gauge-charts/
-    // https://codepen.io/pen/?editors=0010
-    // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
-    let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
-    let washingFreq = filteredWFreq.wfreq
-    // console.log(washingFreq)
+        // Plot gauge chart
+        // https://plotly.com/python/v3/gauge-charts/
+        // https://codepen.io/pen/?editors=0010
+        // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
+        let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
+        let washingFreq = filteredWFreq.wfreq
+        // console.log(washingFreq)
 
-      
         let level = parseFloat(washingFreq)*20;    
         let degrees = 180 - level,
             radius = .5;
