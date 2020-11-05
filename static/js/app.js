@@ -112,7 +112,7 @@ function Data(id) {
     // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
     let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
     let washingFreq = filteredWFreq.wfreq
-    console.log(washingFreq)
+    // console.log(washingFreq)
 
       
         let level = parseFloat(washingFreq)*20;    
