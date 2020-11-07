@@ -123,7 +123,7 @@ function Data(id) {
         // console.log(washingFreq)
 
         //Calculate needle point position
-        let level = parseFloat(washingFreq)*20;    
+        let level = washingFreq*20;    
         let degrees = 180 - level,
             radius = .5;
         let radians = (degrees * Math.PI) / 180;
