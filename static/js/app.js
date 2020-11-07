@@ -1,15 +1,16 @@
-// Populate initial demographics and charts
+// Populate dropdown, initial demographics, and charts
 d3.json("samples.json").then(function(sample_data){
     console.log(sample_data);
 // Populate dropdown
     Object.values(sample_data.names).forEach(function(name) {
         d3.selectAll("#selDataset").append("option").text(name).property(name);
     });
+// Generate initial demographics and charts
     Data(sample_data.names[0]);
     Demographics(sample_data.names[0]);
 });
 
-// Create function to get the data
+// Create function to chart the filtered data
 function Data(id) {
     d3.json("samples.json").then(function(sample_data){
         console.log(sample_data);
@@ -121,6 +122,7 @@ function Data(id) {
         let washingFreq = filteredWFreq.wfreq
         // console.log(washingFreq)
 
+        //Calculate needle point position
         let level = parseFloat(washingFreq)*20;    
         let degrees = 180 - level,
             radius = .5;
@@ -128,7 +130,6 @@ function Data(id) {
         let x = radius * Math.cos(radians);
         let y = radius * Math.sin(radians);
     
-        
         let mainPath = 'M -.0 -0.05 L .0 0.05 L ',
             pathX = String(x),
             space = ' ',
@@ -185,7 +186,6 @@ function Data(id) {
 }
 
 // Create function to get the demographic information
-
 function Demographics(id) {
 
     d3.json("samples.json").then(function(sample_data) {
@@ -201,6 +201,7 @@ function Demographics(id) {
     });
 }
 
+// Create function that changes demographics and charts displayed when new ID is chosen
 function optionChanged(id) {
     Data(id);
     Demographics(id);
