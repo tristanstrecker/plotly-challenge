@@ -163,9 +163,7 @@ function Data(id) {
             type: 'path',
             path: path,
             fillcolor: '#4e4e4e',
-            line: {
-                color: '#4e4e4e'
-            }
+            line: { color: '#4e4e4e' }
             }],
         autosize: true,
         xaxis: {zeroline:false, showticklabels:false,
