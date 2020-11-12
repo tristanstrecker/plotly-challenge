@@ -1,4 +1,8 @@
 # Plot.ly Homework - Belly Button Biodiversity
+Description of this project can be found below the site link
+
+The site can be accessed <a href=https://adrianstrecker.github.io/plotly-challenge/index.html>here</a><br>
+<img src="https://raw.githubusercontent.com/adrianstrecker/plotly-challenge/main/Images/index.png" width="1000">
 
 ![Bacteria by filterforge.com](Images/bacteria.jpg)
 
@@ -53,6 +57,3 @@ Hulcr, J. et al.(2012) _A Jungle in There: Bacteria in Belly Buttons are Highly 
 - - -
 
 © 2019 Trilogy Education Services
-
-The site can be accessed <a href=https://adrianstrecker.github.io/plotly-challenge/index.html>here</a><br>
-<img src="https://raw.githubusercontent.com/adrianstrecker/plotly-challenge/main/Images/index.png" width="1000">
