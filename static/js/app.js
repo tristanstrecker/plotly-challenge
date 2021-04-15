@@ -16,7 +16,7 @@ function Data(id) {
         console.log(sample_data);
 
         let filteredSampleInfo = sample_data.samples.filter(details => details.id.toString() === id)[0];
-    
+
         let sample_values = filteredSampleInfo.sample_values
         console.log(sample_values)
 
@@ -29,7 +29,7 @@ function Data(id) {
 
         let otu_labels = filteredSampleInfo.otu_labels
         console.log(otu_labels) 
-
+        let config = {responsive: true}
         // Create horizontal bar graph
         // https://plotly.com/javascript/bar-charts/#bar-chart-with-hover-text
         let barTrace = {
@@ -53,11 +53,11 @@ function Data(id) {
             titlefont:{
                 family: 'Quicksand, sans-serif',
                 size: 28
-              },
+            },
             font:{
                 family: 'Quicksand, sans-serif',
                 size: 14
-              },
+            },
             xaxis: {gridcolor: '#fff', zerolinecolor: '#5a5a5a'},
             yaxis:{
                 tickmode:"linear",
@@ -71,7 +71,7 @@ function Data(id) {
             plot_bgcolor: "transparent",
             paper_bgcolor: "transparent"
         };
-    Plotly.newPlot("bar", barData, barLayout)   
+    Plotly.newPlot("bar", barData, barLayout, config)   
     
         // Plot bubble chart
         // https://plotly.com/javascript/bubble-charts/
@@ -85,9 +85,9 @@ function Data(id) {
             },
             text: otu_labels
         };
-      
+
         let bubbleData = [bubbleTrace];
-      
+
         let bubbleLayout = {
             title: `All OTU Values for Subject ${subject_id}`,
             titlefont:{
@@ -99,8 +99,6 @@ function Data(id) {
                 size: 14
             },
             showlegend: false,
-            height: 600,
-            width: 1200,
             plot_bgcolor: "transparent",
             paper_bgcolor: "transparent",
             xaxis: {gridcolor: '#fff', zerolinecolor: 'white'},
@@ -111,54 +109,54 @@ function Data(id) {
                 t: 50,
                 b: 50
             }, 
-      };
-      
-      Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    };
 
-        // Plot gauge chart
-        // https://plotly.com/python/v3/gauge-charts/
-        // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
-        let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
-        let washingFreq = filteredWFreq.wfreq
-        // console.log(washingFreq)
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout, config);
 
-        //Calculate needle point position
-        let level = washingFreq*20;    
-        let degrees = 180 - level,
-            radius = .5;
-        let radians = (degrees * Math.PI) / 180;
-        let x = radius * Math.cos(radians);
-        let y = radius * Math.sin(radians);
+    // Plot gauge chart
+    // https://plotly.com/python/v3/gauge-charts/
+    // https://codepen.io/ascotto/pen/eGNaqe?editors=0011
+    let filteredWFreq = sample_data.metadata.filter(details => details.id.toString() === id)[0];
+    let washingFreq = filteredWFreq.wfreq
+    // console.log(washingFreq)
+
+    //Calculate needle point position
+    let level = washingFreq*20;    
+    let degrees = 180 - level,
+        radius = .5;
+    let radians = (degrees * Math.PI) / 180;
+    let x = radius * Math.cos(radians);
+    let y = radius * Math.sin(radians);
     
-        let mainPath = 'M -.0 -0.05 L .0 0.05 L ',
-            pathX = String(x),
-            space = ' ',
-            pathY = String(y),
-            pathEnd = ' Z';
-        let path = mainPath.concat(pathX,space,pathY,pathEnd);
-            
-        let gaugeData = [{ type: 'scatter',
-            x: [0], y:[0],
-            value: level,
-            marker: {size: 28, color:'#4e4e4e'},
-            showlegend: false,
-            name: 'Washing Frequency',
-            text: level/20,
-            hoverinfo: 'text+name'},
-            { values: [50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50],
-            rotation: 90,
-            text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1', ''],
-            textinfo: 'text',
-            textposition:'inside',	  
-            marker: {colors:['#703177','#7d3c84', '#8f4996', '#ad5aa1', '#b563a9cc','#bb76a1cc', '#d291a8cc', '#d29191c7', 'd291917a', 'transparent']},
-            labels: ['8-9', '7-8', '6-7', '5-6','4-5', '3-4', '2-3', '1-2', '0-1', ''],
-            hoverinfo: 'label',
-            hole: .5,
-            type: 'pie',
-            showlegend: false
-            }];
-        
-        let layout = {
+    let mainPath = 'M -.0 -0.05 L .0 0.05 L ',
+        pathX = String(x),
+        space = ' ',
+        pathY = String(y),
+        pathEnd = ' Z';
+    let path = mainPath.concat(pathX,space,pathY,pathEnd);
+
+    let gaugeData = [{ type: 'scatter',
+        x: [0], y:[0],
+        value: level,
+        marker: {size: 28, color:'#4e4e4e'},
+        showlegend: false,
+        name: 'Washing Frequency',
+        text: level/20,
+        hoverinfo: 'text+name'},
+        { values: [50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50/9, 50],
+        rotation: 90,
+        text: ['8-9', '7-8', '6-7', '5-6', '4-5', '3-4', '2-3', '1-2', '0-1', ''],
+        textinfo: 'text',
+        textposition:'inside',	  
+        marker: {colors:['#703177','#7d3c84', '#8f4996', '#ad5aa1', '#b563a9cc','#bb76a1cc', '#d291a8cc', '#d29191c7', 'd291917a', 'transparent']},
+        labels: ['8-9', '7-8', '6-7', '5-6','4-5', '3-4', '2-3', '1-2', '0-1', ''],
+        hoverinfo: 'label',
+        hole: .5,
+        type: 'pie',
+        showlegend: false
+        }];
+
+    let layout = {
         shapes:[{
             type: 'path',
             path: path,
@@ -177,9 +175,9 @@ function Data(id) {
         titlefont: { family: "Quicksand", size: 24 },
         margin: { t: 40, b: 0, l:0, r:0},
         };
-        
-    Plotly.newPlot("gauge", gaugeData, layout);
-    
+
+    Plotly.newPlot("gauge", gaugeData, layout, config);
+
     });
 }
 
@@ -190,9 +188,9 @@ function Demographics(id) {
         let filteredDemoInfo = sample_data.metadata.filter(details => details.id.toString() === id)[0];
 
         let demographicInfo = d3.select("#sample-metadata");
-            
+
         demographicInfo.html("");
-    
+
         Object.entries(filteredDemoInfo).forEach(function([key, value]) {   
             demographicInfo.append("h4").text(`${key}: ${value}`);    
         });
