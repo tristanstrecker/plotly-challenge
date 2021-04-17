@@ -172,7 +172,7 @@ function Data(id) {
         plot_bgcolor: "transparent",
         paper_bgcolor: "transparent",
         title: 'Scrubs per Week',
-        titlefont: { family: "Quicksand", size: 24 },
+        titlefont: { family: "Quicksand", size: 18 },
         margin: { t: 40, b: 0, l:0, r:0},
         };
 
