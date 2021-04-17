@@ -52,7 +52,7 @@ function Data(id) {
             title: `Top Ten OTU Values for Subject ${subject_id}`,
             titlefont:{
                 family: 'Quicksand, sans-serif',
-                size: 28
+                size: 20
             },
             font:{
                 family: 'Quicksand, sans-serif',
@@ -92,7 +92,7 @@ function Data(id) {
             title: `All OTU Values for Subject ${subject_id}`,
             titlefont:{
                 family: 'Quicksand, sans-serif',
-                size: 28
+                size: 20
             },
             font:{
                 family: 'Quicksand, sans-serif',
